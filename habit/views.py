@@ -1,12 +1,11 @@
-from rest_framework.generics import CreateAPIView, UpdateAPIView, DestroyAPIView, RetrieveAPIView, ListAPIView
+from rest_framework.generics import CreateAPIView, DestroyAPIView, ListAPIView, RetrieveAPIView, UpdateAPIView
 from rest_framework.permissions import IsAuthenticated
-
-from users.permissions import IsOwner
 
 from habit.models import Habit
 from habit.paginators import HabitPaginator
 from habit.serializers import HabitSerializer
 from habit.tasks import sending_message_telegram
+from users.permissions import IsOwner
 
 
 class HabitCreateAPIView(CreateAPIView):
@@ -26,10 +25,7 @@ class HabitCreateAPIView(CreateAPIView):
             "action": habit.action,
             "time": habit.time.strftime("%H:%M:%S"),
         }
-        sending_message_telegram.delay(
-            chat_id=self.request.user.tg_chat_id,
-            habit_details=habit_details
-        )
+        sending_message_telegram.delay(chat_id=self.request.user.tg_chat_id, habit_details=habit_details)
 
 
 class HabitUpdateAPIView(UpdateAPIView):

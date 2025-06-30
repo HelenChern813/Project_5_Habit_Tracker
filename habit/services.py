@@ -4,7 +4,7 @@ from config.settings import TOKEN_BOT
 
 
 def send_message(message, chat_id):
-    ''' Функция для сообщения в Телеграмм '''
+    """Функция для сообщения в Телеграмм"""
 
     params = {
         "text": message,

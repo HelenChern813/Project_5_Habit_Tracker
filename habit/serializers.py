@@ -1,12 +1,12 @@
 from rest_framework import serializers
 
 from habit.models import Habit
-from habit.validators import validate_reward_linked_habit, validate_time_complete, validate_linked_habit_is_enjoy, \
-    validate_is_enjoy_habit, validate_periodically
+from habit.validators import (validate_is_enjoy_habit, validate_linked_habit_is_enjoy, validate_periodically,
+                              validate_reward_linked_habit, validate_time_complete)
 
 
 class HabitSerializer(serializers.ModelSerializer):
-    '''Сериализатор привычки'''
+    """Сериализатор привычки"""
 
     def validate(self, data):
 

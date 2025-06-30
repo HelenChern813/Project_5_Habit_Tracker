@@ -44,6 +44,4 @@ class Command(BaseCommand):
         user.set_password(password)
         user.save()
 
-        self.stdout.write(
-            self.style.SUCCESS(f"Успешно создан суперпользователь с email {user.email}")
-        )
+        self.stdout.write(self.style.SUCCESS(f"Успешно создан суперпользователь с email {user.email}"))

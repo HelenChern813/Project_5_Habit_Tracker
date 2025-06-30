@@ -26,7 +26,9 @@ def validate_is_enjoy_habit(habit):
     """У приятной привычки нет вознаграждения или связанной привычки."""
 
     if habit.is_enjoy and (habit.reward or habit.linked_habit):
-        raise ValidationError("У приятной привычки не может быть вознаграждения или связанной привычки. Выполняя ее вы уже становитесь счастливее")
+        raise ValidationError(
+            "У приятной привычки не может быть вознаграждения или связанной привычки. Выполняя ее вы уже становитесь счастливее"
+        )
 
 
 def validate_periodically(habit):
