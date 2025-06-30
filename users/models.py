@@ -10,7 +10,7 @@ class User(AbstractUser):
     email = models.EmailField(unique=True, verbose_name="Почта")
 
     tg_chat_id = models.CharField(
-        max_length=50, blank=True, null=True, verbose_name="Телеграм id"
+        max_length=100, verbose_name="Телеграм чат id"
     )
 
     USERNAME_FIELD = "email"
