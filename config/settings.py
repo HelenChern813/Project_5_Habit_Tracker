@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'habit',
     'users',
     "rest_framework",
-
+    'rest_framework_simplejwt',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
