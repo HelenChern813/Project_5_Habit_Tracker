@@ -20,12 +20,8 @@ class HabitCreateAPIView(CreateAPIView):
 
         habit = serializer.save(user=self.request.user)
 
-        habit_details = {
-            "location": habit.location,
-            "action": habit.action,
-            "time": habit.time.strftime("%H:%M:%S"),
-        }
-        sending_message_telegram.delay(chat_id=self.request.user.tg_chat_id, habit_details=habit_details)
+        habit_pk = habit.pk
+        sending_message_telegram.delay(chat_id=self.request.user.tg_chat_id, habit_id=habit_pk)
 
 
 class HabitUpdateAPIView(UpdateAPIView):
