@@ -37,7 +37,6 @@ class HabitTests(APITestCase):
             "action": "Приготовить ужин",
             "is_enjoy": True,
             "periodically": 2,
-            "reward": "Вкусный ужин",
             "time_complete": 60,
             "is_public": False,
         }
