@@ -40,7 +40,7 @@ jobs:
       - name: Run tests
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          REDIS_HOST: localhost
+          REDIS_HOST: redis
         run: poetry run python manage.py test
   build:
     needs: test
