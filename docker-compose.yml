@@ -19,7 +19,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./nginx.conf:/Project_5_Habit_Tracker/nginx/nginx.conf
+      - ./nginx.conf:/etc/nginx/nginx.conf
       - static_volume:/Project_5_Habit_Tracker/staticfiles
     depends_on:
       - web

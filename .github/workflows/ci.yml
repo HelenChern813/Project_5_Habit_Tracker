@@ -91,8 +91,8 @@ jobs:
           echo "TAG=${{ github.sha }}" >> .env
       - name: Copy files to server
         run: |
-          scp -o StrictHostKeyChecking=no ./nginx.conf ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }}:/Project_5_Habit_Tracker/nginx.conf
-          scp -o StrictHostKeyChecking=no docker-compose.yml ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }}:/Project_5_Habit_Tracker/docker-compose.yml
+          scp -o StrictHostKeyChecking=no nginx/nginx.conf ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }}:/Project_5_Habit_Tracker/nginx.conf
+          scp -o StrictHostKeyChecking=no docker-compose.prod.yml ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }}:/Project_5_Habit_Tracker/docker-compose.yml
           scp -o StrictHostKeyChecking=no .env ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }}:/Project_5_Habit_Tracker/.env
 
       - name: Deploy to server
