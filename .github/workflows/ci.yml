@@ -54,6 +54,7 @@ jobs:
           REDIS_HOST: localhost
           REDIS_PORT: 6379
         run: poetry run python manage.py test
+
   build:
     needs: test
     runs-on: ubuntu-latest
