@@ -23,6 +23,7 @@ jobs:
         run: isort .
       - name: Run flake8
         run: flake8 .
+
   test:
     needs: lint
     runs-on: ubuntu-latest
