@@ -67,6 +67,7 @@ jobs:
         run: docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/myapp:${{ github.sha }} .
       - name: Push docker image
         run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/myapp:${{ github.sha }}
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
