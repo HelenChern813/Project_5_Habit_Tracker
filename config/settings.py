@@ -185,7 +185,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://read-and-write.example.com",  # Замените на адрес вашего фронтенд-сервера и добавьте адрес бэкенд-сервера
 ]
 
-CORS_ALLOW_ALL_ORIGINS = os.getenv("CORS_ALLOW_ALL_ORIGINS")
+CORS_ALLOW_ALL_ORIGINS = False
 
 if "test" in sys.argv:
     DATABASES = {
