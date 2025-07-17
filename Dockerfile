@@ -8,12 +8,10 @@ WORKDIR /Project_5_Habit_Tracker
 COPY poetry.lock pyproject.toml ./
 RUN pip install poetry
 RUN poetry config virtualenvs.create false \
-&& poetry install --no-interaction --no-root
+&& poetry install --no-interaction --no-root -- only main
 
 # Копируем остальные файлы проекта в контейнер
 COPY . .
-
-RUN mkdir -p /Project_5_Habit_Tracker/static
 
 # Открываем порт 8000 для взаимодействия с приложением
 EXPOSE 8000

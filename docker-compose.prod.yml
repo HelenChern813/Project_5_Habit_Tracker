@@ -3,7 +3,7 @@ services:
   static_collector:
     image: ${IMAGE}:${TAG}
     command: >
-      bash -c "mkdir -p /Project_5_Habit_Tracker/staticfiles && python manage.py collectstatic -c --no-input"
+      bash -c "python manage.py collectstatic -c --no-input"
     env_file:
       - .env
     volumes:
