@@ -37,6 +37,7 @@ jobs:
           --health-interval 5s
           --health-timeout 2s
           --health-retries 5
+
     steps:
       - name: Check out code
         uses: actions/checkout@v4
