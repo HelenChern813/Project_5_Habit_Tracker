@@ -31,7 +31,13 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.getenv("DEBUG") == "True" else False
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split()
+ALLOWED_HOSTS = [
+    os.getenv("IP_SERVER"),
+    os.getenv("DJANGO_HOST"),
+    os.getenv("DOCKER_HOST"),
+    os.getenv("LOCAL_IP"),
+    os.getenv("LOCAL_HOST"),
+]
 
 
 # Application definition
