@@ -8,7 +8,7 @@ WORKDIR /Project_5_Habit_Tracker
 COPY poetry.lock pyproject.toml ./
 RUN pip install poetry
 RUN poetry config virtualenvs.create false \
-&& poetry install --no-interaction --no-root -- only Cours_9
+&& poetry install --no-interaction --no-root -- only Course_9
 
 # Копируем остальные файлы проекта в контейнер
 COPY . .
