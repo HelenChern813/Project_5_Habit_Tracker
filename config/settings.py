@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["158.160.169.82", "127.0.0.1","localhost","host.docker.internal"]
 
 
 # Application definition
@@ -169,7 +169,10 @@ CELERY_TASK_TIME_LIMIT = 30 * 60
 TOKEN_BOT = os.getenv("TOKEN_BOT")
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8000",  # Замените на адрес вашего фронтенд-сервера
+    "http://localhost:8000",
+    "http://158.160.169.82",
+    "http://127.0.0.1:80",
+    "http://127.0.0.1",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
