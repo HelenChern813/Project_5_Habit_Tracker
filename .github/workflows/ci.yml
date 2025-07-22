@@ -91,6 +91,7 @@ jobs:
           echo "BOT_TOKEN=${{ secrets.BOT_TOKEN }}" >> .env
           echo "IMAGE=${{ secrets.DOCKER_HUB_USERNAME }}/myapp" >> .env
           echo "TAG=${{ github.sha }}" >> .env
+          echo "IP_SERVER=${{ secrets.IP_SERVER }}" >> .env
 
       - name: Copy files to server
         run: |
